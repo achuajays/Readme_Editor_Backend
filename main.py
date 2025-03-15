@@ -2,8 +2,12 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from groq import Groq
 import os 
+from cors_config import add_cors
 
 app = FastAPI()
+
+add_cors(app)
+
 
 # Define the request body model.
 class ReadmeRequest(BaseModel):
